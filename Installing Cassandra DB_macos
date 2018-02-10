@@ -1,0 +1,44 @@
+Installing Cassandra DB:
+
+Open Terminal window
+
+>Install Homebrew
+
+>>Homebrew is a great little package manager for OS X. If you haven't already, installing it is pretty easy:
+
+1) ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+
+>Install Python
+
+>>Mac OS X has a copy of Python preinstalled, but this makes sure you get the newest version.
+
+2) brew install python
+
+>Install cql
+
+>>To use cqlsh, the Cassandra query language shell, you need to install cql:
+
+3) pip2 install cql
+4) pip2 install cassandra-driver
+
+>Install Cassandra
+
+>>This installs Apache Cassandra:
+
+5)brew install cassandra
+
+>Start Cassandra
+6) brew services start cassandra
+
+>Stop Cassandra
+7) brew services stop cassandra
+
+
+>Access cassandra db
+8) Go to terminal and type  : cqlsh
+You should see an output as : Connected to Test Cluster at 127.0.0.1:9042.
+
+>Cassandra file locations
+>>Properties: /usr/local/etc/cassandra
+>>Logs: /usr/local/var/log/cassandra
+>>Data: /usr/local/var/lib/cassandra/data
