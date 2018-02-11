@@ -1,0 +1,30 @@
+docker ps -> show only running containers
+
+docker ps -a -> show all containers
+
+docker images -> to show the images in the system
+
+docker pull <image name> -> will pull the docker image from docker hub
+
+docker build -f Dockerfile -t springboot-cassandra-image . -> builds the project image with the DockerFile configuration, . is in the current directory, -t lets you give a name to the build image.
+
+docker run --name springboot-cassandra-project -d cassandra:latest -p 9042:9042 -> run the image, "springboot-cassandra-project " is the container name, "latest" is the version of 
+cassandra container you want to run, -p will provide port forwarding
+
+docker exec -it some-cassandra bash -> this gives access to the bash shell inside the cassandra container
+
+ docker run -it --link springboot-cassandra-db:cassandra --rm cassandra cqlsh cassandra -> run the cqlsh bash against your original container
+
+ docker run -p 8085:8085 --name springboot-cassandra-container --link springboot-cassandra-db:cassandra-db -d springboot-cassandra-image -> to link the spring boot container to cassandra container and start the container containing the spring boot app
+
+ docker run --name springboot-cassandra-db -p 9042:9042 cassandra:latest -> create a cassandra container with the name "springboot-cassandra-db" and port forwarding to the local host
+
+ docker stop <container_id> -> stop a running container
+
+ docker start <container_id> -> start a stopped container
+
+ docker rm <container name> -> delete the container
+
+ docker rmi image <image name> -> deletes the image
+
+ docker logs <container name> -> check logs
