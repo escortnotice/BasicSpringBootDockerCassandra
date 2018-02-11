@@ -1,0 +1,9 @@
+CREATE KEYSPACE test WITH replication = {'class':'SimpleStrategy', 'replication_factor' : 1};
+
+Use test;
+
+create table user(user_id int PRIMARY KEY,username text, password text);
+
+insert into user (user_id,username,password) values (1,'kittu','koli123');
+
+select * from user;
